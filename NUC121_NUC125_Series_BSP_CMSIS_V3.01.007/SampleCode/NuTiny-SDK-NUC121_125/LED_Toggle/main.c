@@ -1,13 +1,31 @@
-/**************************************************************************//**
- * @file     main.c
- * @version  V3.00
- * @brief    Toggle PB.4 to turn on/off LED.
- *
- * SPDX-License-Identifier: Apache-2.0
- * @copyright (C) 2016 Nuvoton Technology Corp. All rights reserved.
- ******************************************************************************/
+/**************************************************************************/ /**
+                                                                              * @file     main.c
+                                                                              * @version  V3.00
+                                                                              * @brief    Toggle PB.4 to turn on/off LED.
+                                                                              *
+                                                                              * SPDX-License-Identifier: Apache-2.0
+                                                                              * @copyright (C) 2016 Nuvoton Technology Corp. All rights reserved.
+                                                                              ******************************************************************************/
 #include "stdio.h"
 #include "NuMicro.h"
+
+#define COK1 PC4
+#define COK2 PC3
+#define COK3 PC1
+#define COK4 PC13
+#define COK5 PC11
+#define COK6 PC9
+
+#define CRG1 PB5
+#define CRG2 PC2
+#define CRG3 PC0
+#define CRG4 PC12
+#define CRG5 PC10
+#define CRG6 PC8
+
+
+volatile uint32_t *COK[6] = {&COK1, &COK2, &COK3, &COK4, &COK5, &COK6};
+volatile uint32_t *CRG[6] = {&CRG1, &CRG2, &CRG3, &CRG4, &CRG5, &CRG6};
 
 void SYS_Init(void)
 {
@@ -41,7 +59,6 @@ void SYS_Init(void)
     /* Set PB multi-function pins for UART0 RXD(PB.0) and TXD(PB.1) */
     SYS->GPB_MFPL = (SYS->GPB_MFPL & (~SYS_GPB_MFPL_PB0MFP_Msk)) | SYS_GPB_MFPL_PB0MFP_UART0_RXD;
     SYS->GPB_MFPL = (SYS->GPB_MFPL & (~SYS_GPB_MFPL_PB1MFP_Msk)) | SYS_GPB_MFPL_PB1MFP_UART0_TXD;
-
 }
 
 void UART0_Init()
@@ -61,7 +78,6 @@ void delay_loop(void)
     __IO uint32_t j;
 
     for (j = 0; j < 480000; j++);
-
 }
 
 /*---------------------------------------------------------------------------------------------------------*/
@@ -84,21 +100,8 @@ int32_t main(void)
     printf("\n\nCPU @ %u Hz\n", SystemCoreClock);
     printf("+-------------------------------------------------+\n");
     printf("|        NUC121/125 Toggle LED Sample Code        |\n");
-    printf("+-------------------------------------------------+\n\n");
+    printf("+-------------------------------------------------+\n");
 
-    /* Configure PB.4 as Output mode */
-    PC0 = 1;
-    PC1 = 1;
-    PC2 = 1;
-    PC3 = 1;
-    PC8 = 1;
-    PC9 = 1;
-    PC10 = 1;
-    PC11 = 1;
-    PC12 = 1;
-    PC13 = 1;
-    PB4 = 1;
-    PB5 = 1;
     GPIO_SetMode(PC, BIT0, GPIO_MODE_OUTPUT);
     GPIO_SetMode(PC, BIT1, GPIO_MODE_OUTPUT);
     GPIO_SetMode(PC, BIT2, GPIO_MODE_OUTPUT);
@@ -114,19 +117,28 @@ int32_t main(void)
 
     while (1)
     {
-    	PC0 ^= 1;
-    	PC1 ^= 1;
-    	PC2 ^= 1;
-    	PC3 ^= 1;
-    	PC8 ^= 1;
-    	PC9 ^= 1;
-    	PC10 ^= 1;
-    	PC11 ^= 1;
-    	PC12 ^= 1;
-    	PC13 ^= 1;
-    	PB4 ^= 1;
-        PB5 ^= 1;
+    	//after change
+        for (int i = 0; i < 6; i++)
+        {
+            *COK[i] ^= 1;
+        }
+        for (int i = 0; i < 6; i++)
+        {
+            *CRG[i] ^= 1;
+        }
+        //before change
+//        PC0 ^= 1;
+//        PC1 ^= 1;
+//        PC2 ^= 1;
+//        PC3 ^= 1;
+//        PC8 ^= 1;
+//        PC9 ^= 1;
+//        PC10 ^= 1;
+//        PC11 ^= 1;
+//        PC12 ^= 1;
+//        PC13 ^= 1;
+//        PB4 ^= 1;
+//        PB5 ^= 1;
         delay_loop();
     }
-
 }
