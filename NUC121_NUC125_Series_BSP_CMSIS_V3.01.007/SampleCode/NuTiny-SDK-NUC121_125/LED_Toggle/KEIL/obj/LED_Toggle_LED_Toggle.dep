@@ -1,0 +1,10 @@
+Dependencies for Project 'LED_Toggle', Target 'LED_Toggle': (DO NOT MODIFY !)
+CompilerVersion: <unknown>
+F (..\..\..\..\Library\Device\Nuvoton\NUC121\Source\system_NUC121.c)(0x63ACFB83)()
+F (..\..\..\..\Library\Device\Nuvoton\NUC121\Source\ARM\startup_NUC121.s)(0x63ACFB83)()
+F (..\main.c)(0x63ACFB84)()
+F (..\..\..\..\Library\StdDriver\src\retarget.c)(0x63ACFB83)()
+F (..\..\..\..\Library\StdDriver\src\gpio.c)(0x63ACFB83)()
+F (..\..\..\..\Library\StdDriver\src\clk.c)(0x63ACFB83)()
+F (..\..\..\..\Library\StdDriver\src\sys.c)(0x63ACFB83)()
+F (..\..\..\..\Library\StdDriver\src\uart.c)(0x63ACFB83)()
