@@ -38,7 +38,7 @@ void SYS_Init(void)
     CLK_EnableModuleClock(UART0_MODULE);
 
     /* Enable I2C0 module clock */
-    CLK_EnableModuleClock(I2C0_MODULE);
+    CLK_EnableModuleClock(I2C1_MODULE);
 
     /* Select UART module clock source */
     CLK_SetModuleClock(UART0_MODULE, CLK_CLKSEL1_UARTSEL_HIRC_DIV2, CLK_CLKDIV0_UART(1));
@@ -53,11 +53,11 @@ void SYS_Init(void)
     SYS->GPB_MFPL = SYS_GPB_MFPL_PB0MFP_UART0_RXD | SYS_GPB_MFPL_PB1MFP_UART0_TXD;
 
     /* Set I2C0 PC multi-function pins */
-    SYS->GPC_MFPH &= ~(SYS_GPC_MFPH_PC11MFP_Msk | SYS_GPC_MFPH_PC12MFP_Msk);
-    SYS->GPC_MFPH |= (SYS_GPC_MFPH_PC11MFP_I2C0_SDA | SYS_GPC_MFPH_PC12MFP_I2C0_SCL);
+    SYS->GPC_MFPH &= ~(SYS_GPA_MFPH_PA10MFP_Msk | SYS_GPA_MFPH_PA11MFP_Msk);
+    SYS->GPC_MFPH |= (SYS_GPA_MFPH_PA10MFP_I2C1_SDA | SYS_GPA_MFPH_PA11MFP_I2C1_SCL);
 
     /* I2C pins enable schmitt trigger */
-    PC->SMTEN |= GPIO_SMTEN_SMTEN11_Msk | GPIO_SMTEN_SMTEN12_Msk;
+    PC->SMTEN |= GPIO_SMTEN_SMTEN11_Msk | GPIO_SMTEN_SMTEN10_Msk;
 
 }
 
@@ -74,24 +74,24 @@ void UART0_Init()
 }
 
 
-void I2C0_Init(void)
+void I2C1_Init(void)
 {
     /* Open I2C0 module and set bus clock */
-    I2C_Open(I2C0, 100000);
+    I2C_Open(I2C1, 100000);
 
     /* Get I2C0 Bus Clock */
-    printf("I2C0 clock %d Hz\n", I2C_GetBusClockFreq(I2C0));
+    printf("I2C1 clock %d Hz\n", I2C_GetBusClockFreq(I2C1));
 }
 
-void I2C0_Close(void)
+void I2C1_Close(void)
 {
     /* Disable I2C0 interrupt and clear corresponding NVIC bit */
-    I2C_DisableInt(I2C0);
-    NVIC_DisableIRQ(I2C0_IRQn);
+    I2C_DisableInt(I2C1);
+    NVIC_DisableIRQ(I2C1_IRQn);
 
     /* Disable I2C0 and close I2C0 clock */
-    I2C_Close(I2C0);
-    CLK_DisableModuleClock(I2C0_MODULE);
+    I2C_Close(I2C1);
+    CLK_DisableModuleClock(I2C1_MODULE);
 }
 
 /*---------------------------------------------------------------------------------------------------------*/
@@ -101,6 +101,7 @@ int32_t main(void)
 {
     uint32_t u32Index;
     uint8_t u8Err;
+    printf("OK\n");
 
     /* Unlock protected registers */
     SYS_UnlockReg();
@@ -132,10 +133,10 @@ int32_t main(void)
     printf("I2C0_SDA(PC.11), I2C0_SCL(PC.12)\n");
 
     /* Init I2C0 */
-    I2C0_Init();
+    I2C1_Init();
 
     /* Slave Address */
-    g_u8DeviceAddr = 0x15;
+    g_u8DeviceAddr = 0x70;
 
     u8Err = 0;
 
@@ -146,7 +147,7 @@ int32_t main(void)
         u8Tmp = (uint8_t)u32Index + 3;
 
         /* Single Byte Write (Two Registers) */
-        while (I2C_WriteByteTwoRegs(I2C0, g_u8DeviceAddr, u32Index, u8Tmp));
+        while (I2C_WriteByteTwoRegs(I2C1, g_u8DeviceAddr, u32Index, u8Tmp));
 
         /* Single Byte Read (Two Registers) */
         u8Data = I2C_ReadByteTwoRegs(I2C0, g_u8DeviceAddr, u32Index);

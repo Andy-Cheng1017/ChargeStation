@@ -172,8 +172,8 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x68 ./Library/Library/sys.o
  .debug_ranges  0x00000000       0x58 ./Library/Library/sys.o
- .debug_line    0x00000000      0x362 ./Library/Library/sys.o
- .debug_str     0x00000000      0x3fa ./Library/Library/sys.o
+ .debug_line    0x00000000      0x35c ./Library/Library/sys.o
+ .debug_str     0x00000000      0x3f4 ./Library/Library/sys.o
  .comment       0x00000000       0x4a ./Library/Library/sys.o
  .debug_frame   0x00000000       0xbc ./Library/Library/sys.o
  .ARM.attributes
@@ -218,8 +218,8 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x90 ./Library/Library/uart.o
  .debug_ranges  0x00000000      0x140 ./Library/Library/uart.o
- .debug_line    0x00000000      0x7d7 ./Library/Library/uart.o
- .debug_str     0x00000000      0x59a ./Library/Library/uart.o
+ .debug_line    0x00000000      0x7ce ./Library/Library/uart.o
+ .debug_str     0x00000000      0x594 ./Library/Library/uart.o
  .comment       0x00000000       0x4a ./Library/Library/uart.o
  .debug_frame   0x00000000      0x164 ./Library/Library/uart.o
  .ARM.attributes
@@ -1170,36 +1170,36 @@ LOAD linker stubs
  .debug_ranges  0x00000388       0x90 ./CMSIS/CMSIS/GCC/_syscalls.o
  .debug_ranges  0x00000418       0x30 ./CMSIS/CMSIS/system_NUC121.o
 
-.debug_line     0x00000000     0x38ae
- .debug_line    0x00000000      0x7e3 ./User/cdc_serial.o
- .debug_line    0x000007e3      0x1cf ./User/descriptors.o
- .debug_line    0x000009b2      0x8cb ./User/main.o
- .debug_line    0x0000127d      0xa8f ./Library/Library/clk.o
- .debug_line    0x00001d0c      0x5af ./Library/Library/retarget.o
- .debug_line    0x000022bb      0xc28 ./Library/Library/usbd.o
- .debug_line    0x00002ee3      0x586 ./CMSIS/CMSIS/GCC/_syscalls.o
- .debug_line    0x00003469       0xdc ./CMSIS/CMSIS/GCC/startup_NUC121.o
- .debug_line    0x00003545      0x369 ./CMSIS/CMSIS/system_NUC121.o
+.debug_line     0x00000000     0x3863
+ .debug_line    0x00000000      0x7d7 ./User/cdc_serial.o
+ .debug_line    0x000007d7      0x1c9 ./User/descriptors.o
+ .debug_line    0x000009a0      0x8bf ./User/main.o
+ .debug_line    0x0000125f      0xa83 ./Library/Library/clk.o
+ .debug_line    0x00001ce2      0x5a9 ./Library/Library/retarget.o
+ .debug_line    0x0000228b      0xc1c ./Library/Library/usbd.o
+ .debug_line    0x00002ea7      0x583 ./CMSIS/CMSIS/GCC/_syscalls.o
+ .debug_line    0x0000342a       0xd9 ./CMSIS/CMSIS/GCC/startup_NUC121.o
+ .debug_line    0x00003503      0x360 ./CMSIS/CMSIS/system_NUC121.o
 
-.debug_str      0x00000000     0x1af4
- .debug_str     0x00000000      0x705 ./User/cdc_serial.o
-                                0x791 (size before relaxing)
- .debug_str     0x00000705      0x182 ./User/descriptors.o
-                                0x356 (size before relaxing)
- .debug_str     0x00000887      0x2bf ./User/main.o
-                                0x915 (size before relaxing)
- .debug_str     0x00000b46      0x3b8 ./Library/Library/clk.o
-                                0x730 (size before relaxing)
- .debug_str     0x00000efe      0x481 ./Library/Library/retarget.o
-                                0x72d (size before relaxing)
- .debug_str     0x0000137f      0x364 ./Library/Library/usbd.o
-                                0x762 (size before relaxing)
- .debug_str     0x000016e3      0x2da ./CMSIS/CMSIS/GCC/_syscalls.o
-                                0x54a (size before relaxing)
- .debug_str     0x000019bd       0x8a ./CMSIS/CMSIS/GCC/startup_NUC121.o
-                                0x102 (size before relaxing)
- .debug_str     0x00001a47       0xad ./CMSIS/CMSIS/system_NUC121.o
-                                0x3b8 (size before relaxing)
+.debug_str      0x00000000     0x1ad6
+ .debug_str     0x00000000      0x6ff ./User/cdc_serial.o
+                                0x78b (size before relaxing)
+ .debug_str     0x000006ff      0x17f ./User/descriptors.o
+                                0x350 (size before relaxing)
+ .debug_str     0x0000087e      0x2bc ./User/main.o
+                                0x90f (size before relaxing)
+ .debug_str     0x00000b3a      0x3b5 ./Library/Library/clk.o
+                                0x72a (size before relaxing)
+ .debug_str     0x00000eef      0x47e ./Library/Library/retarget.o
+                                0x727 (size before relaxing)
+ .debug_str     0x0000136d      0x361 ./Library/Library/usbd.o
+                                0x75c (size before relaxing)
+ .debug_str     0x000016ce      0x2d7 ./CMSIS/CMSIS/GCC/_syscalls.o
+                                0x544 (size before relaxing)
+ .debug_str     0x000019a5       0x87 ./CMSIS/CMSIS/GCC/startup_NUC121.o
+                                 0xfc (size before relaxing)
+ .debug_str     0x00001a2c       0xaa ./CMSIS/CMSIS/system_NUC121.o
+                                0x3b2 (size before relaxing)
 
 .debug_frame    0x00000000      0xfc8
  .debug_frame   0x00000000       0xc8 ./User/cdc_serial.o
