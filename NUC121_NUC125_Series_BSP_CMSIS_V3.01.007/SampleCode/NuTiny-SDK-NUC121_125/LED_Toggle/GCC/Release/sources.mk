@@ -21,4 +21,5 @@ CMSIS/CMSIS/GCC \
 CMSIS/CMSIS \
 Library/Library \
 User \
+third\ library \
 

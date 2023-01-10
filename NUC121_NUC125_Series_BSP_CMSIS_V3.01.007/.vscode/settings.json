@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "vcom_and_hid_transfer.h": "c",
-        "cdc_serial.h": "c"
+        "cdc_serial.h": "c",
+        "timer.h": "c"
     }
 }

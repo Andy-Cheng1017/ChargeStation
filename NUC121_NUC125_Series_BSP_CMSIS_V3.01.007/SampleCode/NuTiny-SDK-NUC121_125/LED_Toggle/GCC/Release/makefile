@@ -8,6 +8,7 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include third\ library/subdir.mk
 -include User/subdir.mk
 -include Library/Library/subdir.mk
 -include CMSIS/CMSIS/GCC/subdir.mk
@@ -55,7 +56,7 @@ all: LED_Toggle.elf secondary-outputs
 LED_Toggle.elf: $(OBJS) $(USER_OBJS) makefile objects.mk $(OPTIONAL_TOOL_DEPS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Cross ARM GNU C Linker'
-	arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -T "D:/work/ChargeStation/NUC121_NUC125_Series_BSP_CMSIS_V3.01.007/SampleCode/NuTiny-SDK-NUC121_125/LED_Toggle/GCC/../../../../Library/Device/Nuvoton/NUC121/Source/GCC/gcc_arm.ld" -Xlinker --gc-sections -Wl,-Map,"LED_Toggle.map" --specs=nano.specs -u _printf_float -o "LED_Toggle.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g -T "D:/work/ChargeStation/NUC121_NUC125_Series_BSP_CMSIS_V3.01.007/SampleCode/NuTiny-SDK-NUC121_125/LED_Toggle/GCC/../../../../Library/Device/Nuvoton/NUC121/Source/GCC/gcc_arm.ld" -Xlinker --gc-sections -Wl,-Map,"LED_Toggle.map" --specs=nano.specs -u _printf_float -o "LED_Toggle.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

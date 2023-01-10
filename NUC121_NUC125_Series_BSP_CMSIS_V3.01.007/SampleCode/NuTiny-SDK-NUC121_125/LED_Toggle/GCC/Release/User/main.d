@@ -43,8 +43,7 @@ User/main.o: \
  d:\work\chargestation\nuc121_nuc125_series_bsp_cmsis_v3.01.007\library\stddriver\inc\usci_spi.h \
  d:\work\chargestation\nuc121_nuc125_series_bsp_cmsis_v3.01.007\library\stddriver\inc\usci_uart.h \
  d:\work\chargestation\nuc121_nuc125_series_bsp_cmsis_v3.01.007\library\stddriver\inc\wdt.h \
- d:\work\chargestation\nuc121_nuc125_series_bsp_cmsis_v3.01.007\library\stddriver\inc\wwdt.h \
- D:/work/ChargeStation/NUC121_NUC125_Series_BSP_CMSIS_V3.01.007/SampleCode/NuTiny-SDK-NUC121_125/LED_Toggle/I2c.h
+ d:\work\chargestation\nuc121_nuc125_series_bsp_cmsis_v3.01.007\library\stddriver\inc\wwdt.h
 d:\work\chargestation\nuc121_nuc125_series_bsp_cmsis_v3.01.007\library\device\nuvoton\nuc121\include\numicro.h:
 d:\work\chargestation\nuc121_nuc125_series_bsp_cmsis_v3.01.007\library\device\nuvoton\nuc121\include\NUC121.h:
 d:\work\chargestation\nuc121_nuc125_series_bsp_cmsis_v3.01.007\library\cmsis\include\core_cm0.h:
@@ -89,4 +88,3 @@ d:\work\chargestation\nuc121_nuc125_series_bsp_cmsis_v3.01.007\library\stddriver
 d:\work\chargestation\nuc121_nuc125_series_bsp_cmsis_v3.01.007\library\stddriver\inc\usci_uart.h:
 d:\work\chargestation\nuc121_nuc125_series_bsp_cmsis_v3.01.007\library\stddriver\inc\wdt.h:
 d:\work\chargestation\nuc121_nuc125_series_bsp_cmsis_v3.01.007\library\stddriver\inc\wwdt.h:
-D:/work/ChargeStation/NUC121_NUC125_Series_BSP_CMSIS_V3.01.007/SampleCode/NuTiny-SDK-NUC121_125/LED_Toggle/I2c.h:

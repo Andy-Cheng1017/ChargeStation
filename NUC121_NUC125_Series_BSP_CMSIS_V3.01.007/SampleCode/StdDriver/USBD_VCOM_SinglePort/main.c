@@ -310,7 +310,6 @@ int32_t main(void)
 
     /* Open USB controller */
     USBD_Open(&gsInfo, VCOM_ClassRequest, NULL);
-
     /* Endpoint configuration */
     VCOM_Init();
     /* Start USB device */

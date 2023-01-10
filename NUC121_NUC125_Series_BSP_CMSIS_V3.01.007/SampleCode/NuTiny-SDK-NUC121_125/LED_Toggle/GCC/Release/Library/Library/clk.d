@@ -31,7 +31,7 @@ Library/Library/clk.o: \
  d:\work\chargestation\nuc121_nuc125_series_bsp_cmsis_v3.01.007\library\stddriver\inc\clk.h \
  d:\work\chargestation\nuc121_nuc125_series_bsp_cmsis_v3.01.007\library\stddriver\inc\fmc.h \
  d:\work\chargestation\nuc121_nuc125_series_bsp_cmsis_v3.01.007\library\stddriver\inc\gpio.h \
- d:\work\chargestation\nuc121_nuc125_series_bsp_cmsis_v3.01.007\library\stddriver\inc\i2c.h \
+ D:\work\ChargeStation\NUC121_NUC125_Series_BSP_CMSIS_V3.01.007\SampleCode\NuTiny-SDK-NUC121_125\LED_Toggle\third\ party\ library/i2c.h \
  d:\work\chargestation\nuc121_nuc125_series_bsp_cmsis_v3.01.007\library\stddriver\inc\pdma.h \
  d:\work\chargestation\nuc121_nuc125_series_bsp_cmsis_v3.01.007\library\stddriver\inc\pwm.h \
  d:\work\chargestation\nuc121_nuc125_series_bsp_cmsis_v3.01.007\library\stddriver\inc\spi_i2s.h \
@@ -75,7 +75,7 @@ d:\work\chargestation\nuc121_nuc125_series_bsp_cmsis_v3.01.007\library\stddriver
 d:\work\chargestation\nuc121_nuc125_series_bsp_cmsis_v3.01.007\library\stddriver\inc\clk.h:
 d:\work\chargestation\nuc121_nuc125_series_bsp_cmsis_v3.01.007\library\stddriver\inc\fmc.h:
 d:\work\chargestation\nuc121_nuc125_series_bsp_cmsis_v3.01.007\library\stddriver\inc\gpio.h:
-d:\work\chargestation\nuc121_nuc125_series_bsp_cmsis_v3.01.007\library\stddriver\inc\i2c.h:
+D:\work\ChargeStation\NUC121_NUC125_Series_BSP_CMSIS_V3.01.007\SampleCode\NuTiny-SDK-NUC121_125\LED_Toggle\third\ party\ library/i2c.h:
 d:\work\chargestation\nuc121_nuc125_series_bsp_cmsis_v3.01.007\library\stddriver\inc\pdma.h:
 d:\work\chargestation\nuc121_nuc125_series_bsp_cmsis_v3.01.007\library\stddriver\inc\pwm.h:
 d:\work\chargestation\nuc121_nuc125_series_bsp_cmsis_v3.01.007\library\stddriver\inc\spi_i2s.h:
